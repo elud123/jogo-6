@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bkdyqpeolytd0"]
+
+[ext_resource type="Script" uid="uid://1iuqxsk6w5qt" path="res://alvo.gd" id="1_npyt8"]
+[ext_resource type="Texture2D" uid="uid://bp2qvs5vqwycd" path="res://sprites/kenney_tiny-battle/Tilemap/tilemap.png" id="2_8cu02"]
+[ext_resource type="FontFile" uid="uid://cm1h4rmffkbn6" path="res://daustley/Daustley.otf" id="3_8cu02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0ueq"]
+atlas = ExtResource("2_8cu02")
+region = Rect2(272, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2q6b"]
+atlas = ExtResource("2_8cu02")
+region = Rect2(288, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alvc7"]
+atlas = ExtResource("2_8cu02")
+region = Rect2(272, 18, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qw4se"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0ueq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2q6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alvc7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(10, 14)
+
+[node name="Alvo" type="Area2D" unique_id=1656894486]
+script = ExtResource("1_npyt8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2046117792]
+position = Vector2(-2, -2.5)
+scale = Vector2(0.75, 0.7222222)
+sprite_frames = SubResource("SpriteFrames_qw4se")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=838376087]
+position = Vector2(-2, -3)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Label" type="Label" parent="." unique_id=830783155]
+offset_left = -17.0
+offset_top = 3.0
+offset_right = 56.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 0.6392157, 1, 1)
+theme_override_fonts/font = ExtResource("3_8cu02")
+text = "Parabéns!!"
