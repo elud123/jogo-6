@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dxd7fggt63tf1"]
+
+[ext_resource type="Script" uid="uid://b56avmvmh0tj1" path="res://menu.gd" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://fpeuf55w1wr0" path="res://sprites/360_F_724866961_LMc4oULuX274q5PoA51U791ls96KF4BK.jpg" id="2_4hy44"]
+[ext_resource type="FontFile" uid="uid://cm1h4rmffkbn6" path="res://daustley/Daustley.otf" id="3_ytr4m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehc1u"]
+texture = ExtResource("2_4hy44")
+
+[sub_resource type="SystemFont" id="SystemFont_ehc1u"]
+
+[node name="Menu" type="Control" unique_id=413960396]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mae5d")
+
+[node name="fundo" type="Panel" parent="." unique_id=654980233]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -39.0
+offset_right = -3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ehc1u")
+
+[node name="titulo" type="Label" parent="." unique_id=1581149647]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 69.0
+offset_right = 219.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("3_ytr4m")
+theme_override_font_sizes/font_size = 25
+text = "Cat, find the flag"
+
+[node name="botao 1" type="VBoxContainer" parent="." unique_id=1449557567]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 35.999992
+offset_right = -6.183792
+offset_bottom = 57.999992
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.012390905
+pivot_offset = Vector2(0.48970604, -0.32094574)
+theme_override_constants/separation = 7
+
+[node name="fase 1" type="Button" parent="botao 1" unique_id=1611768941]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 16
+theme_override_constants/icon_max_width = 4
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = SubResource("SystemFont_ehc1u")
+theme_override_font_sizes/font_size = 8
+text = "fase 1"
+
+[node name="botao 2" type="VBoxContainer" parent="." unique_id=228582962]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 97.0
+offset_right = 260.0
+offset_bottom = 119.0
+
+[node name="fase 2" type="Button" parent="botao 2" unique_id=1861929493]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "fase 2"
+
+[connection signal="pressed" from="botao 1/fase 1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="botao 2/fase 2" to="." method="_on_fase_2_pressed"]
