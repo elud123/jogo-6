@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cqlwg8rneaq2w" path="res://arte/tilemap_packed.png" id="1_36yr4"]
 [ext_resource type="PackedScene" uid="uid://b7dfdx0fxgcod" path="res://player.tscn" id="2_ewdr6"]
-[ext_resource type="Texture2D" uid="uid://d1i3glmhsxfcf" path="res://sprites/images (1).jpg" id="3_36yr4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o80kn"]
 texture = ExtResource("1_36yr4")
@@ -873,66 +872,6 @@ texture = ExtResource("1_36yr4")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1n0yy")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewdr6"]
-atlas = ExtResource("3_36yr4")
-region = Rect2(0, 0, 163, 117)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qw4se"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ewdr6")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4opb"]
-atlas = ExtResource("3_36yr4")
-region = Rect2(0, 117, 163, 117)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ehc1u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j4opb")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o80kn"]
-atlas = ExtResource("3_36yr4")
-region = Rect2(0, 351, 163, 117)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ixyg1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o80kn")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ud7v1"]
-atlas = ExtResource("3_36yr4")
-region = Rect2(0, 234, 163, 117)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_74enn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ud7v1")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Jogo 2" type="Node2D" unique_id=844812785]
 
 [node name="Mundo" type="Node2D" parent="." unique_id=29295088]
@@ -955,31 +894,3 @@ tile_set = SubResource("TileSet_ho31r")
 
 [node name="Player" parent="." unique_id=449545652 instance=ExtResource("2_ewdr6")]
 position = Vector2(296, -37)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=107743492]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1622482194]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1785969425]
-sprite_frames = SubResource("SpriteFrames_qw4se")
-
-[node name="Area2D2" type="Area2D" parent="." unique_id=73743697]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=872138916]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D2" unique_id=2075905201]
-sprite_frames = SubResource("SpriteFrames_ehc1u")
-
-[node name="Area2D3" type="Area2D" parent="." unique_id=623511680]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1708421867]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D3" unique_id=2139381698]
-sprite_frames = SubResource("SpriteFrames_ixyg1")
-
-[node name="Area2D4" type="Area2D" parent="." unique_id=1689283849]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=122203147]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D4" unique_id=1395063911]
-sprite_frames = SubResource("SpriteFrames_74enn")
