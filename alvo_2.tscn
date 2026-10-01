@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dw0070ymbhu5y"]
 
 [ext_resource type="Texture2D" uid="uid://ddiiirqg8pdvt" path="res://sprites/images (1)-Photoroom.png" id="1_lt8s1"]
+[ext_resource type="Script" uid="uid://bh3ffe0bpj503" path="res://area_2d.gd" id="1_rqcse"]
+[ext_resource type="Script" uid="uid://bxpbm4ju86qd4" path="res://area_2d_2.gd" id="3_b5iqy"]
+[ext_resource type="AudioStream" uid="uid://co716mbe54sg4" path="res://sprites/vadim_makes_sound-achievement-badge-pop-sound-1-547860.mp3" id="3_vp00s"]
+[ext_resource type="Script" uid="uid://b0on1usu2muh3" path="res://area_2d_3.gd" id="4_vp00s"]
+[ext_resource type="Script" uid="uid://c7bdk1xuylcij" path="res://area_2d_4.gd" id="5_l443s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_30vdn"]
 atlas = ExtResource("1_lt8s1")
@@ -18,7 +23,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw4se"]
-radius = 53.052563
+radius = 9.928932
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y7ng"]
 atlas = ExtResource("1_lt8s1")
@@ -36,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74enn"]
-radius = 27.0
+radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqcse"]
 atlas = ExtResource("1_lt8s1")
@@ -54,8 +59,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixyg1"]
-radius = 26.0
-height = 54.0
+radius = 4.0
+height = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vp00s"]
 atlas = ExtResource("1_lt8s1")
@@ -73,54 +78,75 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehc1u"]
-radius = 25.0
-height = 62.0
+radius = 4.0
+height = 8.0
 
-[node name="Alvo 2" type="Area2D" unique_id=101436071]
+[node name="Alvo 2" type="Node2D" unique_id=451643640]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2986514]
+script = ExtResource("1_rqcse")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1832149941]
-position = Vector2(50, 22.999998)
-scale = Vector2(0.6042945, 0.6196581)
+position = Vector2(-70.9125, -18.37406)
+scale = Vector2(0.12162576, 0.10895829)
 sprite_frames = SubResource("SpriteFrames_qw4se")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/AnimatedSprite2D" unique_id=702665052]
-position = Vector2(26.477158, 1.6137962)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=702665052]
+position = Vector2(-69, -19.000002)
+scale = Vector2(0.6042945, 0.6196581)
 shape = SubResource("CircleShape2D_qw4se")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D" unique_id=1949541053]
+stream = ExtResource("3_vp00s")
+
 [node name="Area2D2" type="Area2D" parent="." unique_id=440367953]
+script = ExtResource("3_b5iqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D2" unique_id=824182542]
-position = Vector2(135, 56)
-scale = Vector2(0.60429454, 0.517094)
+position = Vector2(358.2125, -69)
+scale = Vector2(0.1, 0.094)
 sprite_frames = SubResource("SpriteFrames_h27bt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2/AnimatedSprite2D" unique_id=813794431]
-position = Vector2(24.822327, -9.669426)
-scale = Vector2(1.6548222, 1.9338843)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=813794431]
+position = Vector2(360, -69)
 shape = SubResource("CircleShape2D_74enn")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D2" unique_id=493429423]
+stream = ExtResource("3_vp00s")
+
 [node name="Area2D3" type="Area2D" parent="." unique_id=1841164573]
+script = ExtResource("4_vp00s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D3" unique_id=1785645245]
-position = Vector2(39.00001, 86)
-scale = Vector2(0.75153375, 0.56837606)
+position = Vector2(1.925, 157.66174)
+scale = Vector2(0.111349694, 0.09678206)
 sprite_frames = SubResource("SpriteFrames_b5iqy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3/AnimatedSprite2D" unique_id=548278318]
-position = Vector2(23.951035, 3.5187988)
-scale = Vector2(1.3306122, 1.7593985)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=548278318]
+position = Vector2(5, 158)
+scale = Vector2(0.99999994, 1)
 shape = SubResource("CapsuleShape2D_ixyg1")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D3" unique_id=1872119680]
+stream = ExtResource("3_vp00s")
+
 [node name="Area2D4" type="Area2D" parent="." unique_id=1468894517]
+script = ExtResource("5_l443s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D4" unique_id=1692709113]
-position = Vector2(248, 45)
-scale = Vector2(0.69631904, 0.5940171)
+position = Vector2(428.925, 197.25224)
+scale = Vector2(0.111349694, 0.089782074)
 sprite_frames = SubResource("SpriteFrames_l443s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4/AnimatedSprite2D" unique_id=441583708]
-position = Vector2(-21.54184, 3.3669052)
-scale = Vector2(1.4361233, 1.6834532)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=441583708]
+position = Vector2(427, 198)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_ehc1u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D4" unique_id=1006926228]
+stream = ExtResource("3_vp00s")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_area_2d_4_body_entered"]

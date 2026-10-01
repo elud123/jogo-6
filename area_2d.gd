@@ -1,18 +1,8 @@
 extends Area2D
 
-func _on_area_2d_body_entered(body):
-	if body.name == "player":
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		$AudioStreamPlayer2D.play()
+		get_tree().current_scene.fruta_coletada()
 		queue_free()
-
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_area_2d_3_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_area_2d_4_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+		await $AudioStreamPlayer2D.finished
